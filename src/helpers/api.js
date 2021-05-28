@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { BASE_API_URL, Endpoints } from '../constants/api';
+import { BASE_URL, Endpoints } from '../constants/api';
 import { AUTHENTICATE_ACTION } from '../store/actions/auth';
+import { saveAuthentication } from './storage';
 
-const api = axios.create({ baseURL: BASE_API_URL });
+const api = axios.create({ baseURL: BASE_URL });
 
 const handleErrorResponse = error => {
   let errorResponse;
@@ -23,6 +24,7 @@ export const authenticate =
       const res = await api.get(Endpoints.start(email));
       if (res?.data?.token) {
         dispatch({ type: AUTHENTICATE_ACTION, ...res.data });
+        saveAuthentication(res.data);
         return Promise.resolve(res.data);
       }
       return handleErrorResponse(res.data);

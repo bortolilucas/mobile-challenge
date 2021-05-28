@@ -1,4 +1,4 @@
-export const BASE_API_URL = 'sofit-mobile-challenge.herokuapp.com';
+export const BASE_URL = 'https://sofit-mobile-challenge.herokuapp.com';
 
 export const Endpoints = {
   EXPENSES: '/expenses',
