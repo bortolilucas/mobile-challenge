@@ -1,10 +1,9 @@
 import React from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
-import store from './store';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Navigator from './navigation/Navigator';
 import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Colors from './constants/Colors';
+import Navigator from './navigation/Navigator';
+import ReduxProvider from './store/ReduxProvider';
 
 const App = () => {
   return (
@@ -15,7 +14,7 @@ const App = () => {
         barStyle="dark-content"
       />
       <SafeAreaProvider>
-        <ReduxProvider store={store}>
+        <ReduxProvider>
           <Navigator />
         </ReduxProvider>
       </SafeAreaProvider>

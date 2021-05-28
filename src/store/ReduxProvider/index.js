@@ -14,7 +14,7 @@ const ReduxProvider = props => {
   if (!ready) {
     return <LoadingModal />;
   }
-  return <Provider {...props} />;
+  return <Provider {...props} store={store} />;
 };
 
 export default ReduxProvider;

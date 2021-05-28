@@ -10,7 +10,7 @@ export default StyleSheet.create({
   input: {
     borderColor: Colors.PLACEHOLDER,
     borderBottomWidth: 2,
-    height: plataforms({ ios: 45, android: 50 }),
+    height: plataforms({ ios: 43, android: 50 }),
     fontFamily: Fonts.MEDIUM,
     fontSize: 17.5,
     color: Colors.LIGHT_TEXT,
@@ -20,7 +20,7 @@ export default StyleSheet.create({
   },
   containerLabel: {
     position: 'absolute',
-    top: '23%',
+    top: 11,
   },
   label: {
     fontFamily: Fonts.MEDIUM,
