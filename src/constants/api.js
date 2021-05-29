@@ -1,7 +1,7 @@
 export const BASE_URL = 'https://sofit-mobile-challenge.herokuapp.com';
 
 export const Endpoints = {
-  EXPENSES: '/expenses',
-  expense: id => `/expenses/${id}`,
-  start: email => `start/${email}`,
+  EXPENSES: BASE_URL + '/expenses',
+  expense: id => BASE_URL + `/expenses/${id}`,
+  start: email => BASE_URL + `/start/${email}`,
 };

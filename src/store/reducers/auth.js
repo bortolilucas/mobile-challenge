@@ -1,4 +1,8 @@
-import { AUTHENTICATE_ACTION, REHYDRATE_ACTION } from '../actions/auth';
+import {
+  AUTHENTICATE_ACTION,
+  LOGOUT_ACTION,
+  REHYDRATE_ACTION,
+} from '../actions/auth';
 
 const initialState = {
   _id: '',
@@ -13,13 +17,15 @@ export default (state = initialState, action) => {
         ...state,
         _id: action._id,
         email: action.email,
-        token: action.email,
+        token: action.token,
       };
     case REHYDRATE_ACTION:
       return {
         ...state,
         ...action.auth,
       };
+    case LOGOUT_ACTION:
+      return { ...initialState };
     default:
       return state;
   }

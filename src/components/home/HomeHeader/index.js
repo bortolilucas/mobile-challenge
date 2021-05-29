@@ -12,7 +12,7 @@ const HomeHeader = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Despesas</Text>
       <IconPressable onPress={onAdd} style={styles.addButton}>
-        <FontAwesome5 name="plus" color={Colors.TEXT} size={22} />
+        <FontAwesome5 name="plus" color={Colors.PRIMARY} size={22} />
       </IconPressable>
     </View>
   );

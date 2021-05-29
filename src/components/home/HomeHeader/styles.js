@@ -14,11 +14,6 @@ export default StyleSheet.create({
       ios: 15,
       android: 10,
     }),
-    paddingBottom: plataforms({
-      notch: 20,
-      ios: 30,
-      android: 30,
-    }),
   },
   title: {
     fontFamily: Fonts.BOLD,

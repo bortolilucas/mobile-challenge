@@ -14,3 +14,9 @@ export const saveAuthentication = async data => {
     await AsyncStorage.setItem('auth', JSON.stringify(data));
   } catch (error) {}
 };
+
+export const clearAuthentication = async () => {
+  try {
+    await AsyncStorage.removeItem('auth');
+  } catch (error) {}
+};
