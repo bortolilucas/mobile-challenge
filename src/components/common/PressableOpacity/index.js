@@ -17,6 +17,7 @@ export default function PressableOpacity({
   ...rest
 }) {
   const opacity = useSharedValue(1);
+
   const animatedStyle = useAnimatedStyle(
     () => ({ opacity: opacity.value }),
     [opacity],
@@ -25,7 +26,7 @@ export default function PressableOpacity({
   const onGestureEvent = useAnimatedGestureHandler({
     onStart: () => {
       cancelAnimation(opacity);
-      opacity.value = withTiming(0, {
+      opacity.value = withTiming(0.5, {
         duration: 250,
         easing: Easing.linear,
       });

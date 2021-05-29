@@ -13,10 +13,11 @@ import {
   ERROR_MSG,
   REQUIRED_INPUT_MSG,
 } from '../../constants/strings';
+import { InputTypes } from '../../constants/input';
 
 const initialState = { email: '' };
 
-export default function LoginScreen() {
+const LoginScreen = () => {
   const [values, setValues] = React.useReducer(formReducer, initialState);
   const [loading, setLoading] = React.useState(false);
   const [errors, setErrors] = React.useState({});
@@ -64,7 +65,7 @@ export default function LoginScreen() {
         <Input
           label="E-mail"
           name="email"
-          type="email"
+          type={InputTypes.EMAIL}
           editable={!loading}
           value={values.email}
           onChange={onChange}
@@ -77,4 +78,6 @@ export default function LoginScreen() {
       </SafeAreaView>
     </ScrollView>
   );
-}
+};
+
+export default LoginScreen;

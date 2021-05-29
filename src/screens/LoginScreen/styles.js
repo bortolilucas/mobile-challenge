@@ -28,6 +28,6 @@ export default StyleSheet.create({
     lineHeight: 32 * 1.3,
     letterSpacing: 0.5,
   },
-  inputContainer: { marginTop: 30 },
+  inputContainer: { marginTop: 30, marginBottom: 5 },
   bottom: { flex: 1, justifyContent: 'flex-end' },
 });

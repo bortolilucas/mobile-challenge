@@ -5,7 +5,7 @@ import { plataforms } from '../../../helpers/plataform';
 
 export default StyleSheet.create({
   container: {
-    marginVertical: 5,
+    marginVertical: 10,
   },
   input: {
     borderColor: Colors.PLACEHOLDER,
@@ -17,6 +17,11 @@ export default StyleSheet.create({
     letterSpacing: 0.4,
     paddingVertical: 0,
     paddingLeft: 0,
+  },
+  textarea: {
+    textAlignVertical: 'top',
+    paddingVertical: 12,
+    height: plataforms({ ios: 93, android: 100 }),
   },
   containerLabel: {
     position: 'absolute',

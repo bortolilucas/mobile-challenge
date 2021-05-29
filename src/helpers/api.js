@@ -55,3 +55,19 @@ export const getExpenses =
       return handleErrorResponse(error, dispatch);
     }
   };
+
+export const createExpense =
+  ({ date, item, value, additionalInfo }) =>
+  async (dispatch, getState) => {
+    try {
+      const token = getState().auth.token;
+      const res = await axios.post(
+        Endpoints.EXPENSES,
+        { date, item, value, additionalInfo },
+        { headers: { Authorization: `Bearer ${token}` } },
+      );
+      return Promise.resolve(res.data);
+    } catch (error) {
+      return handleErrorResponse(error, dispatch);
+    }
+  };

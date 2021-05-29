@@ -3,7 +3,7 @@ export default {
   TEXT: '#333',
   LIGHT_TEXT: '#666',
   PLACEHOLDER: '#AAA',
-  BACKGROUND: '#F8F8F8',
+  BACKGROUND: '#FFF',
   TRANSPARENT: 'transparent',
   WHITE: '#FFF',
   ERROR: '#ff5555',
