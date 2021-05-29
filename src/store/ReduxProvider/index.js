@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from '..';
-import LoadingModal from '../../components/LoadingModal';
+import LoadingModal from '../../components/common/LoadingModal';
 import { rehydrateRedux } from '../../helpers/storage';
 
 const ReduxProvider = props => {

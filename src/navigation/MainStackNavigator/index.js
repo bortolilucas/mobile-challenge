@@ -14,7 +14,11 @@ const MainStackNavigator = () => {
   return (
     <Stack.Navigator>
       {isAuth ? (
-        <Stack.Screen name={Screens.HOME} component={HomeScreen} />
+        <Stack.Screen
+          name={Screens.HOME}
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
       ) : (
         <Stack.Screen
           name={Screens.LOGIN}

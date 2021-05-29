@@ -6,7 +6,7 @@ import Reanimated, {
   withDelay,
   withTiming,
 } from 'react-native-reanimated';
-import { getPropsByType } from '../../helpers/input';
+import { getPropsByType } from '../../../helpers/input';
 import styles from './styles';
 
 const Input = ({

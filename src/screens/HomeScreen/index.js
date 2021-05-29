@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { FlatList } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import HomeHeader from '../../components/home/HomeHeader';
+import styles from './styles';
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList style={styles.flatlist} ListHeaderComponent={<HomeHeader />} />
+    </SafeAreaView>
   );
 };
 

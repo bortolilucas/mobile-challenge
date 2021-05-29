@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-import Colors from '../../constants/Colors';
+import Colors from '../../../constants/Colors';
 import styles from './styles';
 
 const Button = ({ text, onPress, loading = false }) => {
