@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { rehydrateRedux } from '../../helpers/storage';
 import { loadingAction } from '../../store/actions/ui';
-import MainStackNavigator from '../MainStackNavigator';
+import DrawerNavigator from '../DrawerNavigator';
 
 const Navigator = () => {
   const [ready, setReady] = React.useState(false);
@@ -24,7 +24,7 @@ const Navigator = () => {
   }
   return (
     <NavigationContainer>
-      <MainStackNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   );
 };

@@ -10,14 +10,23 @@ import Screens from '../../../constants/Screens';
 const HomeHeader = () => {
   const navigation = useNavigation();
 
-  const onAdd = () => {
+  const onAddPress = () => {
     navigation.navigate(Screens.EDIT, { type: 'create' });
+  };
+
+  const onMenuPress = () => {
+    navigation.openDrawer();
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Despesas</Text>
-      <IconPressable onPress={onAdd} style={styles.addButton}>
+      <View style={styles.left}>
+        <IconPressable onPress={onMenuPress} style={styles.addButton}>
+          <FontAwesome5 name="bars" color={Colors.PRIMARY} size={25} />
+        </IconPressable>
+        <Text style={styles.title}>Despesas</Text>
+      </View>
+      <IconPressable onPress={onAddPress} style={styles.addButton}>
         <FontAwesome5 name="plus" color={Colors.PRIMARY} size={22} />
       </IconPressable>
     </View>

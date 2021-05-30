@@ -1,6 +1,6 @@
 import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
-import { Alert, FlatList } from 'react-native';
+import { Alert, FlatList, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import EmptyList from '../../components/home/EmptyList';
@@ -87,25 +87,27 @@ const HomeScreen = ({ navigation }) => {
   );
 
   return (
-    <FlatList
-      data={list}
-      showsVerticalScrollIndicator={false}
-      refreshing={refreshing}
-      onRefresh={onRefresh}
-      onEndReached={onEndReached}
-      onEndReachedThreshold={0.5}
-      style={styles.flatlist}
-      contentContainerStyle={[
-        styles.flatlistContainer,
-        { paddingTop: top, paddingBottom: bottom || 15 },
-      ]}
-      ListHeaderComponent={<HomeHeader />}
-      keyExtractor={keyExtractor}
-      ListEmptyComponent={
-        !loading && <EmptyList text="Nenhuma despesa cadastrada" />
-      }
-      renderItem={renderItem}
-    />
+    <View style={[styles.container, { paddingTop: top }]}>
+      <FlatList
+        data={list}
+        showsVerticalScrollIndicator={false}
+        refreshing={refreshing}
+        onRefresh={onRefresh}
+        onEndReached={onEndReached}
+        onEndReachedThreshold={0.5}
+        style={styles.flatlist}
+        contentContainerStyle={[
+          styles.flatlistContainer,
+          { paddingBottom: bottom || 15 },
+        ]}
+        ListHeaderComponent={<HomeHeader />}
+        keyExtractor={keyExtractor}
+        ListEmptyComponent={
+          !loading && <EmptyList text="Nenhuma despesa cadastrada" />
+        }
+        renderItem={renderItem}
+      />
+    </View>
   );
 };
 

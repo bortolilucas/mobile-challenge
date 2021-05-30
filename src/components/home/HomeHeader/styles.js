@@ -8,7 +8,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 25,
+    paddingHorizontal: 20,
     paddingTop: plataforms({
       notch: 8,
       ios: 15,
@@ -16,12 +16,17 @@ export default StyleSheet.create({
     }),
     paddingBottom: 15,
   },
+  left: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   title: {
     fontFamily: Fonts.BOLD,
-    fontSize: 28,
+    fontSize: 25,
+    paddingLeft: 20,
     color: Colors.PRIMARY,
-    lineHeight: 32 * 1.3,
-    letterSpacing: 0.5,
+    lineHeight: 25 * 1.2,
   },
   addButton: {
     padding: 5,
