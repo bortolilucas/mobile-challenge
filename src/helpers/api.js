@@ -42,7 +42,7 @@ export const authenticate =
   };
 
 export const getExpenses =
-  ({ page, perPage = 15 }) =>
+  ({ page, perPage = 10 }) =>
   async (dispatch, getState) => {
     try {
       const token = getState().auth.token;

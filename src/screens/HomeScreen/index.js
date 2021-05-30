@@ -1,13 +1,15 @@
 import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
-import { Alert, FlatList, View } from 'react-native';
+import { ActivityIndicator, Alert, FlatList, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import EmptyList from '../../components/home/EmptyList';
 import ExpenseListItem from '../../components/home/ExpenseListItem';
 import HomeHeader from '../../components/home/HomeHeader';
+import Colors from '../../constants/Colors';
 import Screens from '../../constants/Screens';
 import * as Api from '../../helpers/api';
+import { isEmpty } from '../../helpers/utils';
 import { loadingAction } from '../../store/actions/ui';
 import { loadingSelector } from '../../store/selectors/ui';
 import styles from './styles';
@@ -19,26 +21,33 @@ const HomeScreen = ({ navigation }) => {
   const loading = useSelector(loadingSelector);
   const [list, setList] = React.useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
+  const [pageLoading, setPageLoading] = React.useState(false);
   const { top, bottom } = useSafeAreaInsets();
   const page = React.useRef(1);
+  const pageDone = React.useRef(false);
 
   const fetchList = React.useCallback(
-    (concat = false) =>
-      dispatch(Api.getExpenses({ page: page.current }))
+    (concat = false) => {
+      return dispatch(Api.getExpenses({ page: page.current }))
         .then(data => {
           if (concat) {
             setList(prevList => [...prevList, ...data]);
           } else {
             setList(data);
           }
+          if (isEmpty(data)) {
+            pageDone.current = true;
+          }
         })
-        .catch(err => err?.message && Alert.alert('Erro', err.message)),
+        .catch(err => err?.message && Alert.alert('Erro', err.message));
+    },
     [dispatch],
   );
 
   useFocusEffect(
     React.useCallback(() => {
       page.current = 1;
+      pageDone.current = false;
       dispatch(loadingAction(true));
       fetchList().finally(() => dispatch(loadingAction(false)));
     }, [dispatch, fetchList]),
@@ -73,13 +82,18 @@ const HomeScreen = ({ navigation }) => {
 
   const onRefresh = () => {
     page.current = 1;
+    pageDone.current = false;
     setRefreshing(true);
     fetchList().finally(() => setRefreshing(false));
   };
 
   const onEndReached = () => {
+    if (pageDone.current) {
+      return;
+    }
     page.current++;
-    fetchList(true);
+    setPageLoading(true);
+    fetchList(true).finally(() => setPageLoading(false));
   };
 
   const renderItem = ({ item }) => (
@@ -104,6 +118,13 @@ const HomeScreen = ({ navigation }) => {
         keyExtractor={keyExtractor}
         ListEmptyComponent={
           !loading && <EmptyList text="Nenhuma despesa cadastrada" />
+        }
+        ListFooterComponent={
+          pageLoading && (
+            <View style={styles.pageLoadingContainer}>
+              <ActivityIndicator size="large" color={Colors.PRIMARY} />
+            </View>
+          )
         }
         renderItem={renderItem}
       />
