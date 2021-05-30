@@ -10,7 +10,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 25,
     paddingTop: plataforms({
-      notch: 10,
+      notch: 8,
       ios: 15,
       android: 10,
     }),

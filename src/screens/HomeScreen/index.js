@@ -1,7 +1,7 @@
 import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
 import { Alert, FlatList } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import EmptyList from '../../components/home/EmptyList';
 import ExpenseListItem from '../../components/home/ExpenseListItem';
@@ -19,6 +19,7 @@ const HomeScreen = ({ navigation }) => {
   const loading = useSelector(loadingSelector);
   const [list, setList] = React.useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
+  const { top, bottom } = useSafeAreaInsets();
   const page = React.useRef(1);
 
   const fetchList = React.useCallback(
@@ -39,9 +40,7 @@ const HomeScreen = ({ navigation }) => {
     React.useCallback(() => {
       page.current = 1;
       dispatch(loadingAction(true));
-      fetchList({ shouldLoad: true }).finally(() =>
-        dispatch(loadingAction(false)),
-      );
+      fetchList().finally(() => dispatch(loadingAction(false)));
     }, [dispatch, fetchList]),
   );
 
@@ -88,24 +87,25 @@ const HomeScreen = ({ navigation }) => {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={list}
-        showsVerticalScrollIndicator={false}
-        refreshing={refreshing}
-        onRefresh={onRefresh}
-        onEndReached={onEndReached}
-        onEndReachedThreshold={0.5}
-        style={styles.flatlist}
-        contentContainerStyle={styles.flatlistContainer}
-        ListHeaderComponent={<HomeHeader />}
-        keyExtractor={keyExtractor}
-        ListEmptyComponent={
-          !loading && <EmptyList text="Nenhuma despesa cadastrada" />
-        }
-        renderItem={renderItem}
-      />
-    </SafeAreaView>
+    <FlatList
+      data={list}
+      showsVerticalScrollIndicator={false}
+      refreshing={refreshing}
+      onRefresh={onRefresh}
+      onEndReached={onEndReached}
+      onEndReachedThreshold={0.5}
+      style={styles.flatlist}
+      contentContainerStyle={[
+        styles.flatlistContainer,
+        { paddingTop: top, paddingBottom: bottom || 15 },
+      ]}
+      ListHeaderComponent={<HomeHeader />}
+      keyExtractor={keyExtractor}
+      ListEmptyComponent={
+        !loading && <EmptyList text="Nenhuma despesa cadastrada" />
+      }
+      renderItem={renderItem}
+    />
   );
 };
 

@@ -8,7 +8,7 @@ export default StyleSheet.create({
     ...generateShadow(3),
     flexDirection: 'row',
     backgroundColor: Colors.WHITE,
-    marginVertical: 9,
+    marginVertical: 8,
     marginHorizontal: 25,
     paddingHorizontal: 10,
     paddingVertical: 10,

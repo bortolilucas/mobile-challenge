@@ -17,6 +17,6 @@ export default StyleSheet.create({
     fontSize: 17.5,
   },
   headerBackIcon: {
-    marginLeft: plataforms({ ios: 12, android: 0 }),
+    marginLeft: plataforms({ ios: 15, android: 0 }),
   },
 });
