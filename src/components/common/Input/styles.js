@@ -20,8 +20,8 @@ export default StyleSheet.create({
   },
   textarea: {
     textAlignVertical: 'top',
-    paddingVertical: 12,
-    height: plataforms({ ios: 93, android: 100 }),
+    paddingTop: plataforms({ ios: 11, android: 12 }),
+    height: 100,
   },
   containerLabel: {
     position: 'absolute',

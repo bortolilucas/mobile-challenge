@@ -71,3 +71,35 @@ export const createExpense =
       return handleErrorResponse(error, dispatch);
     }
   };
+
+export const deleteExpense =
+  ({ id }) =>
+  async (dispatch, getState) => {
+    try {
+      const token = getState().auth.token;
+      const res = await axios.delete(Endpoints.expense(id), {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      return Promise.resolve(res.data);
+    } catch (error) {
+      return handleErrorResponse(error, dispatch);
+    }
+  };
+
+export const editExpense =
+  ({ id, date, item, value, additionalInfo }) =>
+  async (dispatch, getState) => {
+    try {
+      const token = getState().auth.token;
+      const res = await axios.put(
+        Endpoints.expense(id),
+        { date, item, value, additionalInfo },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
+      return Promise.resolve(res.data);
+    } catch (error) {
+      return handleErrorResponse(error, dispatch);
+    }
+  };

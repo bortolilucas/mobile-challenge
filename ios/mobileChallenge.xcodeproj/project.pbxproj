@@ -18,6 +18,7 @@
 		5B7F8422D4084A289A442E39 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6890FA2DA52646DD93FC0739 /* Montserrat-Black.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		88832BE03687434BB9EF70D8 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40AD971ABE064767BFBE5CC1 /* Montserrat-Regular.ttf */; };
+		92B082352663107800B3D3C8 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B082342663107800B3D3C8 /* Dummy.swift */; };
 		964934E7F89C47E6B05FDA7A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F036E16B6E2943AE839AFE43 /* Montserrat-Medium.ttf */; };
 		9F760F006472216C3DEB9756 /* libPods-mobileChallenge-mobileChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2102CD71975257CDDC733ADE /* libPods-mobileChallenge-mobileChallengeTests.a */; };
 /* End PBXBuildFile section */
@@ -43,19 +44,21 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = mobileChallenge/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = mobileChallenge/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mobileChallenge/main.m; sourceTree = "<group>"; };
-		186B1F826676435EAD9DCF34 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		186B1F826676435EAD9DCF34 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		2102CD71975257CDDC733ADE /* libPods-mobileChallenge-mobileChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mobileChallenge-mobileChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CFA63600DEB168E8D566D9 /* Pods-mobileChallenge-mobileChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileChallenge-mobileChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-mobileChallenge-mobileChallengeTests/Pods-mobileChallenge-mobileChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
-		40AD971ABE064767BFBE5CC1 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		6890FA2DA52646DD93FC0739 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Black.ttf"; path = "../src/assets/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		40AD971ABE064767BFBE5CC1 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		6890FA2DA52646DD93FC0739 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Black.ttf"; path = "../src/assets/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mobileChallenge/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9375CAD1409C4EDF975995DA /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		9707881035CA452CA47C0FED /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.ttf"; path = "../src/assets/fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		92B082332663107800B3D3C8 /* mobileChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mobileChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		92B082342663107800B3D3C8 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
+		9375CAD1409C4EDF975995DA /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		9707881035CA452CA47C0FED /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.ttf"; path = "../src/assets/fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		A1C4FFCEAB5D50960AE6FD5B /* Pods-mobileChallenge-mobileChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileChallenge-mobileChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-mobileChallenge-mobileChallengeTests/Pods-mobileChallenge-mobileChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5C032D74D3D5B5B1130D818 /* Pods-mobileChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileChallenge.release.xcconfig"; path = "Target Support Files/Pods-mobileChallenge/Pods-mobileChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		ECE4C49E94A42E40D501E822 /* libPods-mobileChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mobileChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F036E16B6E2943AE839AFE43 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		F036E16B6E2943AE839AFE43 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				92B082342663107800B3D3C8 /* Dummy.swift */,
+				92B082332663107800B3D3C8 /* mobileChallenge-Bridging-Header.h */,
 			);
 			name = mobileChallenge;
 			sourceTree = "<group>";
@@ -126,7 +131,6 @@
 				A1C4FFCEAB5D50960AE6FD5B /* Pods-mobileChallenge-mobileChallengeTests.debug.xcconfig */,
 				25CFA63600DEB168E8D566D9 /* Pods-mobileChallenge-mobileChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -173,7 +177,6 @@
 				9375CAD1409C4EDF975995DA /* Montserrat-SemiBold.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +238,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				92B082352663107800B3D3C8 /* Dummy.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1C4FFCEAB5D50960AE6FD5B /* Pods-mobileChallenge-mobileChallengeTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -491,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 25CFA63600DEB168E8D566D9 /* Pods-mobileChallenge-mobileChallengeTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = mobileChallengeTests/Info.plist;
@@ -531,6 +537,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = mobileChallenge;
+				SWIFT_OBJC_BRIDGING_HEADER = "mobileChallenge-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -556,6 +563,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = mobileChallenge;
+				SWIFT_OBJC_BRIDGING_HEADER = "mobileChallenge-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

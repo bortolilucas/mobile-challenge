@@ -4,9 +4,11 @@ import { REHYDRATE_ACTION } from '../store/actions/auth';
 export const rehydrateRedux = () => async dispatch => {
   const auth = await AsyncStorage.getItem('auth');
   if (auth) {
-    return dispatch({ type: REHYDRATE_ACTION, auth: JSON.parse(auth) });
+    const parsed = JSON.parse(auth);
+    dispatch({ type: REHYDRATE_ACTION, auth: parsed });
+    return Promise.resolve(parsed);
   }
-  return Promise.resolve();
+  return Promise.resolve(null);
 };
 
 export const saveAuthentication = async data => {

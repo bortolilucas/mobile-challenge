@@ -4,9 +4,9 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '10.0'
 
 target 'mobileChallenge' do
-  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
-
   config = use_native_modules!
+  
+  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
 
   use_react_native!(
     :path => config[:reactNativePath],

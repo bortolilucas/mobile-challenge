@@ -26,7 +26,7 @@ export default function PressableOpacity({
   const onGestureEvent = useAnimatedGestureHandler({
     onStart: () => {
       cancelAnimation(opacity);
-      opacity.value = withTiming(0.5, {
+      opacity.value = withTiming(0.2, {
         duration: 250,
         easing: Easing.linear,
       });

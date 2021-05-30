@@ -20,10 +20,11 @@ const Input = ({
   containerStyle,
   error,
   inputStyle,
+  defaultFontSize = 18,
   ...props
 }) => {
-  const translateY = useSharedValue(0);
-  const fontSize = useSharedValue(18);
+  const translateY = useSharedValue(value ? -21 : 0);
+  const fontSize = useSharedValue(value ? 12 : defaultFontSize);
 
   const containerLabelAnimatedStyle = useAnimatedStyle(() => ({
     transform: [{ translateY: translateY.value }],
@@ -42,7 +43,10 @@ const Input = ({
 
   const onBlur = () => {
     if (!value) {
-      fontSize.value = withDelay(100, withTiming(18, { duration: 150 }));
+      fontSize.value = withDelay(
+        100,
+        withTiming(defaultFontSize, { duration: 150 }),
+      );
       translateY.value = withDelay(100, withTiming(0, { duration: 150 }));
     }
   };
@@ -84,6 +88,7 @@ const Input = ({
     case InputTypes.TEXTAREA:
       propsByType = {
         onChangeText,
+        multiline: true,
         style: [styles.input, styles.textarea, inputStyle],
       };
       Component = TextInput;
