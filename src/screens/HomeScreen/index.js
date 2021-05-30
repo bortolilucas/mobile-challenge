@@ -80,6 +80,8 @@ const HomeScreen = ({ navigation }) => {
     [dispatch],
   );
 
+  const onItemPress = React.useCallback(item => {}, []);
+
   const onRefresh = () => {
     page.current = 1;
     pageDone.current = false;
@@ -97,7 +99,12 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const renderItem = ({ item }) => (
-    <ExpenseListItem item={item} onEdit={onEdit} onDelete={onDelete} />
+    <ExpenseListItem
+      item={item}
+      onEdit={onEdit}
+      onDelete={onDelete}
+      onPress={onItemPress}
+    />
   );
 
   return (

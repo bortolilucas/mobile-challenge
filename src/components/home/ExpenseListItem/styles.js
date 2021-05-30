@@ -6,13 +6,17 @@ import Fonts from '../../../constants/Fonts';
 export default StyleSheet.create({
   container: {
     ...generateShadow(3),
+    borderRadius: 7,
+    marginHorizontal: 25,
+    marginVertical: 8,
+  },
+  innerContainer: {
     flexDirection: 'row',
     backgroundColor: Colors.WHITE,
-    marginVertical: 8,
-    marginHorizontal: 25,
     paddingHorizontal: 10,
     paddingVertical: 10,
     borderRadius: 7,
+    overflow: 'hidden',
   },
   name: {
     color: Colors.TEXT,
