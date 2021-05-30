@@ -19,17 +19,25 @@ const HomeScreen = ({ navigation }) => {
   const loading = useSelector(loadingSelector);
   const [list, setList] = React.useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
+  const page = React.useRef(1);
 
   const fetchList = React.useCallback(
-    () =>
-      dispatch(Api.getExpenses({ page: 1 }))
-        .then(data => setList(data))
+    (concat = false) =>
+      dispatch(Api.getExpenses({ page: page.current }))
+        .then(data => {
+          if (concat) {
+            setList(prevList => [...prevList, ...data]);
+          } else {
+            setList(data);
+          }
+        })
         .catch(err => err?.message && Alert.alert('Erro', err.message)),
     [dispatch],
   );
 
   useFocusEffect(
     React.useCallback(() => {
+      page.current = 1;
       dispatch(loadingAction(true));
       fetchList({ shouldLoad: true }).finally(() =>
         dispatch(loadingAction(false)),
@@ -65,8 +73,14 @@ const HomeScreen = ({ navigation }) => {
   );
 
   const onRefresh = () => {
+    page.current = 1;
     setRefreshing(true);
     fetchList().finally(() => setRefreshing(false));
+  };
+
+  const onEndReached = () => {
+    page.current++;
+    fetchList(true);
   };
 
   const renderItem = ({ item }) => (
@@ -80,6 +94,8 @@ const HomeScreen = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
         refreshing={refreshing}
         onRefresh={onRefresh}
+        onEndReached={onEndReached}
+        onEndReachedThreshold={0.5}
         style={styles.flatlist}
         contentContainerStyle={styles.flatlistContainer}
         ListHeaderComponent={<HomeHeader />}
