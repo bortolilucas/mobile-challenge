@@ -8,4 +8,5 @@ export default {
   WHITE: '#FFF',
   ERROR: '#ff5555',
   white: (a = 1) => `rgba(255, 255, 255, ${a})`,
+  black: (a = 1) => `rgba(0, 0, 0, ${a})`,
 };

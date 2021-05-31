@@ -7,7 +7,6 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { useSelector } from 'react-redux';
 import Colors from '../../constants/Colors';
 import Screens from '../../constants/Screens';
-import ExpenseDetailScreen from '../../screens/ExpenseDetailScreen';
 import ExpenseEditScreen from '../../screens/ExpenseEditScreen';
 import HomeScreen from '../../screens/HomeScreen';
 import LoginScreen from '../../screens/LoginScreen';
@@ -48,30 +47,6 @@ const MainStackNavigator = () => {
             name={Screens.EDIT}
             component={ExpenseEditScreen}
             options={TransitionPresets.ModalTransition}
-          />
-          <Stack.Screen
-            name={Screens.DETAIL}
-            component={ExpenseDetailScreen}
-            options={{
-              headerShown: false,
-              cardStyle: { backgroundColor: Colors.TRANSPARENT },
-              cardOverlayEnabled: true,
-              cardStyleInterpolator: ({ current: { progress } }) => ({
-                cardStyle: {
-                  opacity: progress.interpolate({
-                    inputRange: [0, 0.5, 0.9, 1],
-                    outputRange: [0, 0.25, 0.7, 1],
-                  }),
-                },
-                overlayStyle: {
-                  opacity: progress.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, 0.7],
-                    extrapolate: 'clamp',
-                  }),
-                },
-              }),
-            }}
           />
         </>
       ) : (

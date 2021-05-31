@@ -1,10 +1,14 @@
 import { StyleSheet } from 'react-native';
 import { generateShadow } from 'react-native-shadow-generator';
-import Colors from '../../constants/Colors';
-import Fonts from '../../constants/Fonts';
+import Colors from '../../../constants/Colors';
+import Fonts from '../../../constants/Fonts';
 
 export default StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center' },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: Colors.black(0.7),
+  },
   modal: {
     ...generateShadow(10),
     position: 'absolute',

@@ -3,6 +3,7 @@ import React from 'react';
 import { ActivityIndicator, Alert, FlatList, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
+import ExpenseDetailModal from '../../components/detail/ExpenseDetailModal';
 import EmptyList from '../../components/home/EmptyList';
 import ExpenseListItem from '../../components/home/ExpenseListItem';
 import HomeHeader from '../../components/home/HomeHeader';
@@ -22,10 +23,10 @@ const HomeScreen = ({ navigation }) => {
   const [list, setList] = React.useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
   const [pageLoading, setPageLoading] = React.useState(false);
+  const [itemSel, setItemSel] = React.useState(null);
   const { top, bottom } = useSafeAreaInsets();
   const page = React.useRef(1);
   const pageDone = React.useRef(false);
-  const preventFetching = React.useRef(false);
 
   const fetchList = React.useCallback(
     (concat = false) => {
@@ -47,13 +48,10 @@ const HomeScreen = ({ navigation }) => {
 
   useFocusEffect(
     React.useCallback(() => {
-      if (!preventFetching.current) {
-        page.current = 1;
-        pageDone.current = false;
-        dispatch(loadingAction(true));
-        fetchList().finally(() => dispatch(loadingAction(false)));
-      }
-      preventFetching.current = false;
+      page.current = 1;
+      pageDone.current = false;
+      dispatch(loadingAction(true));
+      fetchList().finally(() => dispatch(loadingAction(false)));
     }, [dispatch, fetchList]),
   );
 
@@ -84,13 +82,9 @@ const HomeScreen = ({ navigation }) => {
     [dispatch],
   );
 
-  const onItemPress = React.useCallback(
-    item => {
-      preventFetching.current = true;
-      navigation.navigate(Screens.DETAIL, { item });
-    },
-    [navigation],
-  );
+  const onItemPress = React.useCallback(item => {
+    setItemSel(item);
+  }, []);
 
   const onRefresh = () => {
     page.current = 1;
@@ -145,6 +139,7 @@ const HomeScreen = ({ navigation }) => {
         }
         renderItem={renderItem}
       />
+      <ExpenseDetailModal item={itemSel} setItemSel={setItemSel} />
     </View>
   );
 };

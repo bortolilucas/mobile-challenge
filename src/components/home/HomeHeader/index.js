@@ -4,7 +4,7 @@ import styles from './styles';
 import IconPressable from '../../common/IconPressable';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Colors from '../../../constants/Colors';
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/native';
 import Screens from '../../../constants/Screens';
 
 const HomeHeader = () => {
