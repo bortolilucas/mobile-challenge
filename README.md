@@ -16,7 +16,7 @@ git clone https://github.com/bortolilucas/mobile-challenge.git
 yarn install && npx pod-install
 ```
 
-3. Inicia a aplicação no ios ou android
+3. Inicie a aplicação no ios ou android
 
 ```bash
 yarn run ios
