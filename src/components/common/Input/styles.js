@@ -21,7 +21,7 @@ export default StyleSheet.create({
   textarea: {
     textAlignVertical: 'top',
     paddingTop: plataforms({ ios: 11, android: 12 }),
-    height: 100,
+    height: 110,
   },
   containerLabel: {
     position: 'absolute',

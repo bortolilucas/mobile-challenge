@@ -25,6 +25,7 @@ const HomeScreen = ({ navigation }) => {
   const { top, bottom } = useSafeAreaInsets();
   const page = React.useRef(1);
   const pageDone = React.useRef(false);
+  const preventFetching = React.useRef(false);
 
   const fetchList = React.useCallback(
     (concat = false) => {
@@ -46,10 +47,13 @@ const HomeScreen = ({ navigation }) => {
 
   useFocusEffect(
     React.useCallback(() => {
-      page.current = 1;
-      pageDone.current = false;
-      dispatch(loadingAction(true));
-      fetchList().finally(() => dispatch(loadingAction(false)));
+      if (!preventFetching.current) {
+        page.current = 1;
+        pageDone.current = false;
+        dispatch(loadingAction(true));
+        fetchList().finally(() => dispatch(loadingAction(false)));
+      }
+      preventFetching.current = false;
     }, [dispatch, fetchList]),
   );
 
@@ -80,7 +84,13 @@ const HomeScreen = ({ navigation }) => {
     [dispatch],
   );
 
-  const onItemPress = React.useCallback(item => {}, []);
+  const onItemPress = React.useCallback(
+    item => {
+      preventFetching.current = true;
+      navigation.navigate(Screens.DETAIL, { item });
+    },
+    [navigation],
+  );
 
   const onRefresh = () => {
     page.current = 1;

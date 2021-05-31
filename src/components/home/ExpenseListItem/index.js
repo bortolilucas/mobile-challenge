@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { formatPrice } from '../../../helpers/currency';
-import { changeDateIntlToBr } from '../../../helpers/date';
-import styles from './styles';
+import { StyleSheet, Text, View } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../../../constants/Colors';
+import { formatPrice } from '../../../helpers/currency';
+import { changeDateIntlToBr } from '../../../helpers/date';
 import IconPressable from '../../common/IconPressable';
-import { RectButton } from 'react-native-gesture-handler';
+import styles from './styles';
 
 const ExpenseListItem = ({ item, onEdit, onPress, onDelete }) => {
   const handleEdit = () => onEdit(item);
 
   const handleDelete = () => onDelete(item);
+
+  const handlePress = () => onPress(item);
 
   return (
     <View style={styles.container}>
@@ -29,12 +31,9 @@ const ExpenseListItem = ({ item, onEdit, onPress, onDelete }) => {
             />
             <Text style={styles.date}>{changeDateIntlToBr(item.date)}</Text>
           </View>
-          {!!item.descricao && (
-            <Text style={styles.descricao}>{item.descricao}</Text>
-          )}
         </View>
         <View style={StyleSheet.absoluteFill}>
-          <RectButton onPress={onPress} style={StyleSheet.absoluteFill} />
+          <RectButton onPress={handlePress} style={StyleSheet.absoluteFill} />
         </View>
         <View style={styles.right}>
           <IconPressable style={styles.icon} onPress={handleEdit}>
