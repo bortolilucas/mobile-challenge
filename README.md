@@ -7,19 +7,19 @@ Aplicação para o controle simples de despesas pessoais que permite listar, ins
 1. Clone o repositório
 
 ```bash
- git clone https://github.com/bortolilucas/mobile-challenge.git
+git clone https://github.com/bortolilucas/mobile-challenge.git
 ```
 
 2. Instale as dependências
 
 ```bash
- yarn install && npx pod-install
+yarn install && npx pod-install
 ```
 
 3. Inicia a aplicação no ios ou android
 
 ```bash
- yarn run ios
+yarn run ios
 ```
 
 ```bash
