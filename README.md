@@ -1,6 +1,6 @@
 # Desafio técnico para desenvolvimento mobile
 
-Aplicação para o controle simples de despesas pessoais que permite listar, inserir, visualizar, editar e excluir as despesas. Desenvolvido como desafio para aplicação a oportunidade de desenvolvedor mobile na [Sofit](https://sofit4.com.br).
+Aplicação para o controle simples de despesas pessoais que permite listar, inserir, visualizar, editar e excluir as despesas.
 
 ## Instruções
 
